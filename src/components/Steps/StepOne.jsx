@@ -38,9 +38,12 @@ export default function StepOne({ onNext, updateFormData, formData }) {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div>
+        <label className="block text-gray-300 mb-2">
+          Full Name <span className="text-red-500">*</span>
+        </label>
         <input
           {...register("fullName")}
-          placeholder="Full Name"
+          placeholder="Enter your full name"
           className="w-full p-3 bg-gray-700 rounded-lg"
         />
         {errors.fullName && (
@@ -49,10 +52,13 @@ export default function StepOne({ onNext, updateFormData, formData }) {
       </div>
 
       <div>
+        <label className="block text-gray-300 mb-2">
+          Email <span className="text-red-500">*</span>
+        </label>
         <input
           {...register("email")}
           type="email"
-          placeholder="Email"
+          placeholder="Enter your email"
           className="w-full p-3 bg-gray-700 rounded-lg"
         />
         {errors.email && (
@@ -61,10 +67,13 @@ export default function StepOne({ onNext, updateFormData, formData }) {
       </div>
 
       <div>
+        <label className="block text-gray-300 mb-2">
+          Password <span className="text-red-500">*</span>
+        </label>
         <input
           {...register("password")}
           type="password"
-          placeholder="Password"
+          placeholder="Enter your password"
           className="w-full p-3 bg-gray-700 rounded-lg"
         />
         {errors.password && (
@@ -73,10 +82,13 @@ export default function StepOne({ onNext, updateFormData, formData }) {
       </div>
 
       <div>
+        <label className="block text-gray-300 mb-2">
+          Confirm Password <span className="text-red-500">*</span>
+        </label>
         <input
           {...register("confirmPassword")}
           type="password"
-          placeholder="Confirm Password"
+          placeholder="Confirm your password"
           className="w-full p-3 bg-gray-700 rounded-lg"
         />
         {errors.confirmPassword && (
@@ -85,7 +97,9 @@ export default function StepOne({ onNext, updateFormData, formData }) {
       </div>
 
       <div className="space-y-2">
-        <label className="block text-gray-300">Gender</label>
+        <label className="block text-gray-300">
+          Gender <span className="text-red-500">*</span>
+        </label>
         <div className="flex gap-4">
           <label className="flex items-center">
             <input
@@ -121,6 +135,9 @@ export default function StepOne({ onNext, updateFormData, formData }) {
       </div>
 
       <div>
+        <label className="block text-gray-300 mb-2">
+          Date of Birth <span className="text-red-500">*</span>
+        </label>
         <input
           {...register("dateOfBirth")}
           type="date"

@@ -1,5 +1,7 @@
 "use client";
 
+import { toast } from "react-toastify";
+
 export default function StepSix({ formData, onPrev, resetForm }) {
   const formatValue = (value) => {
     if (value instanceof File) {
@@ -34,7 +36,7 @@ export default function StepSix({ formData, onPrev, resetForm }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Form submitted successfully!");
+    toast.success("Form submitted successfully!");
     console.log("Form Data:", formData);
     resetForm();
   };

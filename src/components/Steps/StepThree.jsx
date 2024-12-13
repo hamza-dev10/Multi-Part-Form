@@ -43,9 +43,12 @@ export default function StepThree({
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div>
+        <label className="block text-gray-300 mb-2">
+          Job Title <span className="text-red-500">*</span>
+        </label>
         <input
           {...register("jobTitle")}
-          placeholder="Current Job Title"
+          placeholder="Enter your current job title"
           className="w-full p-3 bg-gray-700 rounded-lg"
         />
         {errors.jobTitle && (
@@ -54,11 +57,14 @@ export default function StepThree({
       </div>
 
       <div>
+        <label className="block text-gray-300 mb-2">
+          Employment Status <span className="text-red-500">*</span>
+        </label>
         <select
           {...register("employmentStatus")}
           className="w-full p-3 bg-gray-700 rounded-lg"
         >
-          <option value="">Select Employment Status</option>
+          <option value="">Select your employment status</option>
           <option value="Employed">Employed</option>
           <option value="Unemployed">Unemployed</option>
           <option value="Student">Student</option>
@@ -71,9 +77,12 @@ export default function StepThree({
 
       {employmentStatus === "Employed" && (
         <div>
+          <label className="block text-gray-300 mb-2">
+            Company Name <span className="text-red-500">*</span>
+          </label>
           <input
             {...register("companyName")}
-            placeholder="Company Name"
+            placeholder="Enter your company name"
             className="w-full p-3 bg-gray-700 rounded-lg"
           />
           {errors.companyName && (
@@ -83,16 +92,19 @@ export default function StepThree({
       )}
 
       <div>
+        <label className="block text-gray-300 mb-2">
+          Years of Experience <span className="text-red-500">*</span>
+        </label>
         <input
           {...register("yearsOfExperience")}
           type="number"
           min="0"
+          placeholder="Enter years of experience"
           onKeyDown={(e) => {
             if (e.key === "-" || e.key === "e") {
               e.preventDefault();
             }
           }}
-          placeholder="Years of Experience"
           className="w-full p-3 bg-gray-700 rounded-lg"
         />
         {errors.yearsOfExperience && (
@@ -103,6 +115,9 @@ export default function StepThree({
       </div>
 
       <div>
+        <label className="block text-gray-300 mb-2">
+          Resume <span className="text-red-500">*</span>
+        </label>
         <input
           {...register("resume")}
           type="file"

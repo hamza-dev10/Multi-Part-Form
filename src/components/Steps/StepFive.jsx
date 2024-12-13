@@ -42,7 +42,9 @@ export default function StepFive({ onNext, onPrev, updateFormData, formData }) {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div className="space-y-2">
-        <label className="block text-gray-300">Preferred Mode of Contact</label>
+        <label className="block text-gray-300 mb-2">
+          Preferred Mode of Contact <span className="text-red-500">*</span>
+        </label>
         <div className="space-y-2">
           <label className="flex items-center">
             <input
@@ -78,7 +80,9 @@ export default function StepFive({ onNext, onPrev, updateFormData, formData }) {
       </div>
 
       <div className="space-y-2">
-        <label className="block text-gray-300">Hobbies and Interests</label>
+        <label className="block text-gray-300 mb-2">
+          Hobbies and Interests <span className="text-red-500">*</span>
+        </label>
         <div className="grid grid-cols-2 gap-2">
           {hobbies.map((hobby) => (
             <label key={hobby} className="flex items-center">
@@ -98,7 +102,7 @@ export default function StepFive({ onNext, onPrev, updateFormData, formData }) {
       </div>
 
       <div>
-        <label className="flex items-center">
+        <label className="flex items-center text-gray-300">
           <input {...register("newsletter")} type="checkbox" className="mr-2" />
           Subscribe to newsletter
         </label>

@@ -36,9 +36,12 @@ export default function StepTwo({ onNext, onPrev, updateFormData, formData }) {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div>
+        <label className="block text-gray-300 mb-2">
+          Phone Number <span className="text-red-500">*</span>
+        </label>
         <input
           {...register("phoneNumber")}
-          placeholder="Phone Number"
+          placeholder="Enter your phone number"
           className="w-full p-3 bg-gray-700 rounded-lg"
         />
         {errors.phoneNumber && (
@@ -47,17 +50,23 @@ export default function StepTwo({ onNext, onPrev, updateFormData, formData }) {
       </div>
 
       <div>
+        <label className="block text-gray-300 mb-2">
+          Alternate Phone Number
+        </label>
         <input
           {...register("alternatePhone")}
-          placeholder="Alternate Phone Number (Optional)"
+          placeholder="Enter alternate phone number (optional)"
           className="w-full p-3 bg-gray-700 rounded-lg"
         />
       </div>
 
       <div>
+        <label className="block text-gray-300 mb-2">
+          Address Line 1 <span className="text-red-500">*</span>
+        </label>
         <input
           {...register("addressLine1")}
-          placeholder="Address Line 1"
+          placeholder="Enter your street address"
           className="w-full p-3 bg-gray-700 rounded-lg"
         />
         {errors.addressLine1 && (
@@ -66,19 +75,23 @@ export default function StepTwo({ onNext, onPrev, updateFormData, formData }) {
       </div>
 
       <div>
+        <label className="block text-gray-300 mb-2">Address Line 2</label>
         <input
           {...register("addressLine2")}
-          placeholder="Address Line 2 (Optional)"
+          placeholder="Apartment, suite, etc. (optional)"
           className="w-full p-3 bg-gray-700 rounded-lg"
         />
       </div>
 
       <div>
+        <label className="block text-gray-300 mb-2">
+          City <span className="text-red-500">*</span>
+        </label>
         <select
           {...register("city")}
           className="w-full p-3 bg-gray-700 rounded-lg"
         >
-          <option value="">Select City</option>
+          <option value="">Select your city</option>
           {cities.map((city) => (
             <option key={city} value={city}>
               {city}
@@ -91,9 +104,12 @@ export default function StepTwo({ onNext, onPrev, updateFormData, formData }) {
       </div>
 
       <div>
+        <label className="block text-gray-300 mb-2">
+          Postal Code <span className="text-red-500">*</span>
+        </label>
         <input
           {...register("postalCode")}
-          placeholder="Postal Code"
+          placeholder="Enter your postal code"
           className="w-full p-3 bg-gray-700 rounded-lg"
         />
         {errors.postalCode && (
@@ -102,11 +118,14 @@ export default function StepTwo({ onNext, onPrev, updateFormData, formData }) {
       </div>
 
       <div>
+        <label className="block text-gray-300 mb-2">
+          Country <span className="text-red-500">*</span>
+        </label>
         <select
           {...register("country")}
           className="w-full p-3 bg-gray-700 rounded-lg"
         >
-          <option value="">Select Country</option>
+          <option value="">Select your country</option>
           {countries.map((country) => (
             <option key={country} value={country}>
               {country}

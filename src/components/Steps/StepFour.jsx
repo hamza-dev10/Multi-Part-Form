@@ -48,16 +48,19 @@ export default function StepFour({ onNext, onPrev, updateFormData, formData }) {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div>
+        <label className="block text-gray-300 mb-2">
+          Monthly Income <span className="text-red-500">*</span>
+        </label>
         <input
           {...register("monthlyIncome")}
           type="number"
           min="0"
+          placeholder="Enter your monthly income"
           onKeyDown={(e) => {
             if (e.key === "-" || e.key === "e") {
               e.preventDefault();
             }
           }}
-          placeholder="Monthly Income"
           className="w-full p-3 bg-gray-700 rounded-lg"
         />
         {errors.monthlyIncome && (
@@ -66,6 +69,9 @@ export default function StepFour({ onNext, onPrev, updateFormData, formData }) {
       </div>
 
       <div>
+        <label className="block text-gray-300 mb-2">
+          Loan Status <span className="text-red-500">*</span>
+        </label>
         <select
           {...register("loanStatus")}
           className="w-full p-3 bg-gray-700 rounded-lg"
@@ -81,16 +87,19 @@ export default function StepFour({ onNext, onPrev, updateFormData, formData }) {
 
       {loanStatus === "Yes" && (
         <div>
+          <label className="block text-gray-300 mb-2">
+            Loan Amount <span className="text-red-500">*</span>
+          </label>
           <input
             {...register("loanAmount")}
             type="number"
             min="0"
+            placeholder="Enter your loan amount"
             onKeyDown={(e) => {
               if (e.key === "-" || e.key === "e") {
                 e.preventDefault();
               }
             }}
-            placeholder="Loan Amount"
             className="w-full p-3 bg-gray-700 rounded-lg"
           />
           {errors.loanAmount && (
@@ -100,17 +109,20 @@ export default function StepFour({ onNext, onPrev, updateFormData, formData }) {
       )}
 
       <div>
+        <label className="block text-gray-300 mb-2">
+          Credit Score <span className="text-red-500">*</span>
+        </label>
         <input
           {...register("creditScore")}
           type="number"
           min="300"
           max="850"
+          placeholder="Enter your credit score (300-850)"
           onKeyDown={(e) => {
             if (e.key === "-" || e.key === "e") {
               e.preventDefault();
             }
           }}
-          placeholder="Credit Score (300-850)"
           className="w-full p-3 bg-gray-700 rounded-lg"
         />
         {errors.creditScore && (
